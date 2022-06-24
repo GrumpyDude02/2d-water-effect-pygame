@@ -21,7 +21,7 @@ class spring():
         self.pos=Vector2(x,y)
         self.tile=64
         self.speed=speed
-        self.rect=pygame.Rect(self.pos.x,self.pos.y,5,5)
+        self.rect=pygame.Rect(self.pos.x,self.pos.y,15,20)
         
 class falling_object2():
     def __init__(self,pos,accelartion,speed):
@@ -66,7 +66,7 @@ def draw_cube(cube_list,water_list):
         for waters in water_list:
             if cube.rect.colliderect(waters.rect):
                 cube.inwater=True
-                waters.speed+=cube.speed*0.75
+                waters.speed+=cube.speed*0.25
                 
         if cube.inwater:  
             cube.acc-=cube.acc*2
